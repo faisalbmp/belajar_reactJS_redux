@@ -1,0 +1,110 @@
+.header {
+    background: rgb(120, 226, 13);
+    display: flex;
+    width: 400px;
+    justify-content: space-between;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-bottom: 40px;
+}
+
+.trolley {
+    position: relative;
+}
+
+.trolley img {
+    width: 30px;
+}
+
+.logo {
+    position: relative;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.count {
+    background: #2c3f2c;
+    padding: 10px;
+    border-radius: 50%;
+    min-width: 10px;
+    height: 10px;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    position: absolute;
+    bottom: -8px;
+    left: -13px;
+}
+
+.card{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    width: 320px;
+    box-sizing: border-box;
+    margin-right: 12px;
+}
+
+.img-thumb-prod{
+    width: 100%;
+    min-height: 158px;
+    overflow: hidden;
+    margin: auto;
+    position: relative;
+}
+
+.img-thumb-prod img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+}
+
+p.product-title {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0px;
+    margin-top: 10px;
+    color: #2d2d2d;
+}
+
+p.product-price {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0px;
+    margin-top: 20px;
+    color: #ac8233;
+}
+
+p.time{
+    position: absolute;
+    color: white;
+    bottom: 6px;
+    right: 6px;
+    margin: 0px;
+    background: black;
+    padding: 4px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+p.title{
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: capitalize;
+    margin: 0px;
+    margin-top: 10px;
+    color: #2d2d2d;
+}
+
+p.desc{
+    font-size: 5px;
+    font-weight: 300;
+    margin: 0px;
+    color: #2d2d2d;
+}
