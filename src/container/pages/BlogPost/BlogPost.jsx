@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import './BlogPost.css';
-import Post from '../../component/post/post';
+import Post from '../../../component/post/post';
 import axios from 'axios';
 
 const url = 'http://localhost:3000/posts';
@@ -104,6 +104,7 @@ class BlogPost extends Component {
     }
 
     render() {
+        console.log('this is blog post');
         return (
             <Fragment>
                 <p>Halaman Blog Post</p>
