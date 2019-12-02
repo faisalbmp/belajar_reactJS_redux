@@ -1,0 +1,14 @@
+.detail-body{
+    color: brown;
+    font-size: 22px;
+}
+
+.detail-title{
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.p-detail-post {
+    padding: 30px;
+}

@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import './BlogPost.css';
 import Post from '../../../component/post/post';
 import axios from 'axios';
+// import API from '../../../services';
 
 const url = 'http://localhost:3000/posts';
 
@@ -32,8 +33,16 @@ class BlogPost extends Component {
     }
 
     getPostApi = () => {
+        /* API.getNewsBlog()
+        .then((res)=>{
+            console.log('globaal API', res.data)
+            this.setState({
+                post: res.data
+            });
+        }); */
+
         axios.get(url + '?_sort=id&_order=desc')
-            .then((res) => {
+        .then((res) => {
                 // console.log(res.data);
                 this.setState({
                     post: res.data
@@ -72,8 +81,8 @@ class BlogPost extends Component {
 
     handleSubmit = () => {
         if (this.state.isUpdate) {
-            this.putDatatoAPI(); 
-        } else {    
+            this.putDatatoAPI();
+        } else {
             this.postDatatoAPI();
         }
     }
@@ -85,13 +94,13 @@ class BlogPost extends Component {
         });
         // this.putDatatoAPI(data);
         console.log(this.state.formBlogPost);
-        
+
     }
 
     handleFormChange = (event) => {
         let formBlogPost = { ...this.state.formBlogPost };
         let timeStamp = new Date().getTime();
-        if(!this.state.isUpdate){
+        if (!this.state.isUpdate) {
             formBlogPost['id'] = timeStamp;
         }
         formBlogPost[event.target.name] = event.target.value;
@@ -101,6 +110,11 @@ class BlogPost extends Component {
         }, () => {
             console.log("value new : ", this.state.formBlogPost)
         })
+    }
+
+    handleDetail = (id) => {
+        // console.log('this is detail');
+        this.props.history.push(`/detail-post/${id}`)
     }
 
     render() {
@@ -118,7 +132,7 @@ class BlogPost extends Component {
                     <button className="btn-submit" onClick={this.handleSubmit}>SIMPAN</button>
                 </div>
                 {this.state.post.map(post => {
-                    return <Post key={post.id} data={post} remove={this.handleRemove} update={this.handleUpdate} />
+                    return <Post key={post.id} goDetail={this.handleDetail} data={post} remove={this.handleRemove} update={this.handleUpdate} />
                 })}
             </Fragment>
         )
